@@ -85,7 +85,7 @@ setwd("./input_files/coda")
 file.List <- list.files(".")
 file.List <- file.List[sort.list(file.List)]
 # load coda files and generate MCMC objects for each models 
-for(i in seq(25, length(file.List), 4)){
+for(i in seq(1, length(file.List), 4)){
   subname <- sub("CODA.*","",file.List[i]) # get the substring before "CODA" 
   chain1 <- read.coda(output.file = paste0(subname, "CODA_chain1.txt"), index.file = paste0(subname, "CODA_index.txt"))
   chain2 <- read.coda(output.file = paste0(subname, "CODA_chain2.txt"), index.file = paste0(subname, "CODA_index.txt"))
